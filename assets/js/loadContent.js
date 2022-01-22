@@ -78,4 +78,113 @@ $.getJSON(url_ce, function (data) {
     })
 });
 
-     
+//Team
+var url_t = "../assets/data/team.json";         
+// id Name Description Image_name Designation
+$.getJSON(url_t, function (data) {
+    $.each(data[2].data, function (key,value) {
+        document.getElementById('team').innerHTML += "<div class='mx-auto col-lg-4 col-md-6 d-flex align-items-stretch'>"+
+        "<div class='member'>"+
+          "<div class='member-img'>"+
+            "<img src='assets/img/team/"+value.Image_name+"' class='img-fluid' alt=''>"+
+          "</div>"+
+          "<div class='member-info'>"+
+            "<h4>'"+value.Name+"'</h4>"+
+            "<span>'"+value.Designation+"'</span>"+
+            "<p>'"+value.Description+"'</p>"+
+          "</div></div></div>";
+       
+    }) 
+});
+
+//Categories
+var url_c = "../assets/data/category.json";         
+// cat-id cat-name
+$.getJSON(url_c, function (data) {
+    $.each(data[2].data, function (key,value) {
+        document.getElementById('entries-flters').innerHTML += "<li data-filter='.time"+value['cat-id']+"'>"+value['cat-name']+"</li>";
+        // console.log(value); 
+    }) 
+});
+
+var auth_arr={};
+var url_auth = "../assets/data/blogsters.json";
+$.getJSON(url_auth,function(data){
+    $.each(data[2].data, function (key,value){
+        auth_arr[value['auth-id']] = value['auth-name'];
+    })
+});
+
+// console.log(auth_arr);
+
+//Blog Posts
+var url_bp = "../assets/data/blog.json";         
+// cat-id auth-id blog-id content Image_name title date
+$.getJSON(url_bp, function (data) {
+    $.each(data[2].data, function (key,value) {
+        var a_name ="";
+        if (value['auth-id'] in auth_arr){
+            a_name = auth_arr[value['auth-id']];
+        }
+        document.getElementById('tblog').innerHTML += "<article class='entry time"+value['cat-id']+"'>"+
+        "<div class='entry-img' style='text-align:center'>"+
+          "<img src='assets/img/blog-headers/"+value.Image_name+"' alt='' class='img-fluid' width=80%>"+
+        "</div>"+
+    
+        "<h2 class='entry-title'>"+
+          "<a href='blog-single.html?blog="+value['blog-id']+"'>"+value.title+"</a>"+
+        "</h2>"+
+        
+        "<div class='entry-meta'>"+
+      "<ul>"+ 
+        "<li class='d-flex align-items-center'><i class='icofont-user'></i> <a href='blog-single.html?blog="+value['blog-id']+"'>"+a_name+"</a></li>"+
+        "<li class='d-flex align-items-center'><i class='icofont-wall-clock'></i> <a href='blog-single.html?blog="+value['blog-id']+"'><time datetime='2020-01-01'>"+value.date+"</time></a></li>"+
+      "</ul>"+
+    "</div>"+
+    "<div class='entry-content'>"+
+      "<p>"+(value.content.substring(value.content.indexOf('</style>'),value.content.indexOf('</style>')+ 1008).replace(/(<([^>]+)>)/gi, "")).substring(0,500)+"..."+"</p>"+
+      "<div class='read-more'>"+
+        "<a href='blog-single.html?blog="+value['blog-id']+"'>Read More</a>"+
+      "</div></div></article> <!-- End blog entry -->";
+       
+    }) 
+});
+
+
+//Single Blog Posts
+var url_sbp = "../assets/data/blog.json";         
+// cat-id auth-id blog-id content Image_name title date
+$.getJSON(url_sbp, function (data) {
+    $.each(data[2].data, function (key,value) {
+        var a_name ="";
+        if (value['auth-id'] in auth_arr){
+            a_name = auth_arr[value['auth-id']];
+        }
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('blog');
+        
+        if(value['blog-id'] == code)
+            document.getElementById('sblog').innerHTML += "<article class='entry entry-single'>"+
+                "<div class='entry-img' style='text-align: center;'>"+
+                "<img src='assets/img/blog-headers/"+value.Image_name+"' alt='Failed' class='img-fluid'>"+
+                "</div>"+
+                "<h2 class='entry-title' style='text-align:center'>"+
+                "<a href='blog-single.html?blog="+value['blog-id']+"'>"+value.title+"</a></h2>"+
+                "<div class='entry-meta'>"+
+                "<ul>"+
+                "<li class='d-flex align-items-center'><i class='icofont-user'></i> <a href='blog-single.html?blog="+value['blog-id']+">"+a_name+"</a></li>"+
+                "<li class='d-flex align-items-center'><i class='icofont-wall-clock'></i> <a href='blog-single.html?blog="+value['blog-id']+"><time datetime='2020-01-01'>"+value.date+"</time></a></li>"+
+                "</ul></div>"+
+                "<div class='entry-content col-md-12'>"+value.content+"</div></article><!-- End blog entry -->"+
+                "<div class='blog-author clearfix'>"+
+                "<img src='assets/img/blog-author_male.png' class=' float-left' alt=''>"+
+                "<h4>"+a_name+"</h4>"+
+                "<div class='social-links'>"+
+                "<a href='https://twitters.com/#'><i class='icofont-twitter'></i></a>"+
+                "<a href='https://facebook.com/#'><i class='icofont-facebook'></i></a>"+
+                "<a href='https://instagram.com/#'><i class='icofont-instagram'></i></a></div>"+
+                "<p>HEHEE</p></div><!-- End blog author bio -->";
+    }) 
+});
+
+

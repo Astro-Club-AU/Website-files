@@ -107,4 +107,97 @@
               </div>
             </div>
           </div>
----------------------------------------------------------
+----------------------------------------------------------------------------------------------
+<div class='mx-auto col-lg-4 col-md-6 d-flex align-items-stretch'>
+  <div class='member'>
+    <div class='member-img'>
+      <img src='.$path.' class='img-fluid' alt=''>
+      <!-- <div class='social'>
+        <a href=''><i class='icofont-twitter'></i></a>
+        <a href=''><i class='icofont-facebook'></i></a>
+        <a href=''><i class='icofont-instagram'></i></a>
+        <a href=''><i class='icofont-linkedin'></i></a>
+      </div> -->
+    </div>
+    <div class='member-info'>
+      <h4>'.$name.'</h4>
+      <span>'.$desg.'</span>
+      <p>'.$desc.'</p>
+    </div>
+  </div>
+</div>
+--------------------------------------------------------------------------------------------------------
+<article class='entry '.$cn.''>
+    <div class='entry-img' style='text-align:center'>
+      <img src='' alt='' class='img-fluid' width=80%>
+    </div>
+
+    <h2 class='entry-title'>
+      <a href='blog-single.php?blog='.$bid.''>'.$title.'</a>
+    </h2>
+    
+    <div class='entry-meta'>
+  <ul>
+    <li class='d-flex align-items-center'><i class='icofont-user'></i> <a href='blog-single.php?blog='.$bid.''>'.$name.'</a></li>
+    <li class='d-flex align-items-center'><i class='icofont-wall-clock'></i> <a href='blog-single.php?blog='.$bid.''><time datetime='2020-01-01'>'.$date.'</time></a></li>
+  </ul>
+</div>
+<div class='entry-content'>
+  <p>'.$result_post.'</p>
+  <div class='read-more'>
+    <a href='blog-single.php?blog='.$bid.''>Read More</a>
+  </div>
+</div>  
+</article> <!-- End blog entry -->
+------------------------------------------------------------------------------------------------------------
+<article class='entry entry-single'>
+  <div class='entry-img' style='text-align: center;'>
+    <img src=<?php echo $cat_img;?> alt='' class='img-fluid'>
+  </div>
+
+  <h2 class='entry-title'>
+    <a href='blog-single.php?blog=<?php echo $bid_get;?>'>
+    <?php
+    echo $title;
+  ?>
+    </a>
+  </h2>
+
+  <div class='entry-meta'>
+    <ul>
+      <li class='d-flex align-items-center'><i class='icofont-user'></i> <a href='blog-single.php?blog=<?php echo $bid_get;?>'><?php echo $name; ?></a></li>
+      <li class='d-flex align-items-center'><i class='icofont-wall-clock'></i> <a href='blog-single.php?blog=<?php echo $bid_get;?>'><time datetime='2020-01-01'><?php echo $date; ?></time></a></li>
+    </ul>
+  </div>
+
+  <div class='entry-content col-md-12'>
+  <?php
+    echo $contents;
+  ?>
+
+  </div>
+
+
+</article><!-- End blog entry -->
+
+<div class='blog-author clearfix'>
+  <img src='assets/img/blog-author_male.png' class=' float-left' alt=''>
+      <h4> <?php 
+        
+
+        echo $name;
+      
+      
+      ?> </h4>
+    
+  <div class='social-links'>
+    <a href='https://twitters.com/#'><i class='icofont-twitter'></i></a>
+    <a href='https://facebook.com/#'><i class='icofont-facebook'></i></a>
+    <a href='https://instagram.com/#'><i class='icofont-instagram'></i></a>
+  </div>
+  <p>
+    <?php echo $desc; ?>
+  </p>
+</div><!-- End blog author bio -->
+
+-------------------------------------------------------------------------------------------------------
