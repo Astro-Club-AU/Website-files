@@ -1,5 +1,5 @@
- <!-- ======= Footer ======= -->
-  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+   <!-- ======= Footer ======= -->
+   <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
 
     <div class="footer-newsletter">
       <div class="container">
@@ -40,7 +40,7 @@
               Anna University, Guindy, <br>
               Chennai, Tamil Nadu 600025 <br><br>
               <strong>Phone:</strong> +91 98842 99162<br>
-              <strong>Email:</strong> cegastronomy@gmail.com<br>
+              <strong>Email:</strong> astroclubau@gmail.com<br>
             </p>
 
           </div>

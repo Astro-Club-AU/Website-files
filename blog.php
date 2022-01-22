@@ -38,7 +38,7 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link  rel="stylesheet" href="assets/css/style.css?v=<?php echo time(); ?>">
+  <link  rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
