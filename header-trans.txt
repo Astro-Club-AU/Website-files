@@ -32,7 +32,7 @@
                 <li><a href='/stellarium.html'>Stellarium</a></li>
                 <li><a href='/solar.html'>Solar System</a></li>
                 <li><a href='/star-chart.html'>Cosmic Planisphere</a></li>
-                <li><a href='/star-chart.html'>Yearly Events</a></li>
+                <li><a href='/calendar.html'>Yearly Events</a></li>
               </ul>
             </li>
             <li id='c'><a href='/contact.html'>Contact Us</a></li>
@@ -79,7 +79,7 @@
               <li><a href='/stellarium.html'>Stellarium</a></li>
               <li><a href='/solar.html'>Solar System</a></li>
               <li><a href='/star-chart.html'>Cosmic Planisphere</a></li>
-              <li><a href='/star-chart.html'>Yearly Events</a></li>
+              <li><a href='/calendar.html'>Yearly Events</a></li>
             </ul>
           </li>
           <li id='c'><a href='/contact.html'>Contact Us</a></li>
